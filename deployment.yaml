@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-docker-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-docker-app
+  template:
+    metadata:
+      labels:
+        app: java-docker-app
+    spec:
+      containers:
+      - name: java-docker-app
+        image: sushmithach2004/java-docker-app:latest
+        ports:
+        - containerPort: 8080
